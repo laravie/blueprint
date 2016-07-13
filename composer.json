@@ -1,5 +1,5 @@
 {
-    "name": "dingo/blueprint",
+    "name": "laravie/blueprint",
     "description": "API Blueprint documentation generator.",
     "keywords": ["blueprint", "api", "laravel", "dingo", "docs"],
     "license": "BSD-3-Clause",
@@ -11,14 +11,14 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "illuminate/support": "~5.1 || 5.2.*",
-        "illuminate/filesystem": "~5.1 || 5.2.*",
+        "illuminate/support": "~5.1",
+        "illuminate/filesystem": "~5.1",
         "doctrine/annotations": "1.2.*",
         "phpdocumentor/reflection-docblock": "3.1.*"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "~2.0",
-        "phpunit/phpunit": "~4.0"
+        "phpunit/phpunit": "~4.0|~5.0"
     },
     "autoload": {
         "psr-4": {
@@ -32,9 +32,9 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.2-dev"
+            "dev-master": "1.0-dev"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }
