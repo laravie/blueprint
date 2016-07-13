@@ -44,7 +44,7 @@ class Blueprint
     public function __construct(SimpleAnnotationReader $reader, Filesystem $files)
     {
         $this->reader = $reader;
-        $this->files = $files;
+        $this->files  = $files;
 
         $this->registerAnnotationLoader();
     }
@@ -87,7 +87,7 @@ class Blueprint
         $resources = $controllers->map(function ($controller) use ($version) {
             $controller = $controller instanceof ReflectionClass ? $controller : new ReflectionClass($controller);
 
-            $actions = new Collection;
+            $actions = new Collection();
 
             // Spin through all the methods on the controller and compare the version
             // annotation (if supplied) with the version given for the generation.

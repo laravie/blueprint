@@ -29,7 +29,7 @@ abstract class Section
      */
     public function getParameters()
     {
-        $parameters = new Collection;
+        $parameters = new Collection();
 
         if ($annotation = $this->getAnnotationByType('Parameters')) {
             foreach ($annotation->value as $parameter) {
@@ -47,7 +47,7 @@ abstract class Section
      */
     public function getAttributes()
     {
-        $attributes = new Collection;
+        $attributes = new Collection();
 
         if ($annotation = $this->getAnnotationByType('Attributes')) {
             foreach ($annotation->value as $attribute) {
