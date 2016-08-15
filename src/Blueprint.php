@@ -132,6 +132,8 @@ class Blueprint
 
         $contents .= $this->getFormat();
         $contents .= $this->line(2);
+        $contents .= $this->getHost();
+        $contents .= $this->line(2);
         $contents .= sprintf('# %s', $name);
         $contents .= $this->line(2);
 
@@ -443,6 +445,24 @@ class Blueprint
     protected function tab($repeat = 1)
     {
         return str_repeat('    ', $repeat);
+    }
+
+    /**
+     * Get the API Blueprint Host data for metadata information
+     *
+     * @return string
+     */
+    protected function getHost()
+    {
+        $uri = [
+            config('api.protocol').'://'.config('api.domain')
+        ];
+
+        if (! is_null($prefix = config('api.prefix'))) {
+            $uri[] = $prefix;
+        }
+
+        return 'Host: ' . implode('/', $uriArray);
     }
 
     /**
