@@ -462,7 +462,7 @@ class Blueprint
             $uri[] = $prefix;
         }
 
-        return 'Host: ' . implode('/', $uriArray);
+        return 'Host: '.implode('/', $uri);
     }
 
     /**
