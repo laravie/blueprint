@@ -44,7 +44,7 @@ class Blueprint
     public function __construct(SimpleAnnotationReader $reader, Filesystem $files)
     {
         $this->reader = $reader;
-        $this->files  = $files;
+        $this->files = $files;
 
         $this->registerAnnotationLoader();
     }

@@ -39,7 +39,7 @@ class Action extends Section
      */
     public function __construct(ReflectionMethod $reflector, Collection $annotations)
     {
-        $this->reflector   = $reflector;
+        $this->reflector = $reflector;
         $this->annotations = $annotations;
     }
 
@@ -118,7 +118,7 @@ class Action extends Section
      */
     public function getIdentifier()
     {
-        $factory  = \phpDocumentor\Reflection\DocBlockFactory::createInstance();
+        $factory = \phpDocumentor\Reflection\DocBlockFactory::createInstance();
         $docblock = $factory->create($this->reflector);
 
         return $docblock->getSummary();
@@ -131,7 +131,7 @@ class Action extends Section
      */
     public function getDescription()
     {
-        $factory  = \phpDocumentor\Reflection\DocBlockFactory::createInstance();
+        $factory = \phpDocumentor\Reflection\DocBlockFactory::createInstance();
         $docblock = $factory->create($this->reflector);
 
         return $docblock->getDescription();
