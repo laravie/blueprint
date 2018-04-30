@@ -6,7 +6,7 @@ namespace {
 
 namespace Dingo\Blueprint {
 
-    use PHPUnit_Framework_TestCase;
+    use PHPUnit\Framework\TestCase;
     use Illuminate\Support\Collection;
     use Illuminate\Filesystem\Filesystem;
     use Doctrine\Common\Annotations\SimpleAnnotationReader;
@@ -46,7 +46,7 @@ namespace Dingo\Blueprint {
         return value($default);
     }
 
-    class LaravelIntegrationTest extends PHPUnit_Framework_TestCase
+    class LaravelIntegrationTest extends TestCase
     {
         protected $simpleExample = <<<'EOT'
 FORMAT: 1A

@@ -2,19 +2,15 @@ language: php
 sudo: false
 
 php:
-  - 5.6
   - 7.0
   - 7.1
+  - 7.2
 
 env:
-  global:
+  matrix:
     - setup=basic
-matrix:
-  include:
-    - php: 5.6
-      env: setup=lowest
-    - php: 5.6
-      env: setup=stable
+    - setup=lowest
+    - setup=stable
 
 install:
   - if [[ $setup = 'basic' ]]; then travis_retry composer install --prefer-dist --no-interaction; fi
