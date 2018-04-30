@@ -69,7 +69,8 @@ class RestResource extends Section
         $this->setResourceOnActions();
     }
 
-    public function getAnnotations() {
+    public function getAnnotations()
+    {
         return $this->annotations;
     }
 
@@ -149,15 +150,14 @@ class RestResource extends Section
         try {
             $docblock = $factory->create($this->reflector);
 
-            if (!$docblock)
+            if (! $docblock) {
                 return '';
+            }
 
-            $text = $docblock->getSummary() . $docblock->getDescription();
+            $text = $docblock->getSummary().$docblock->getDescription();
 
             return $text;
-        }
-
-        catch (\InvalidArgumentException $e) {
+        } catch (\InvalidArgumentException $e) {
             return '';
         }
     }

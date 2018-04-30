@@ -117,6 +117,7 @@ class Blueprint
             }
 
             $annotations = new Collection($this->reader->getClassAnnotations($controller));
+
             return new RestResource($controller->getName(), $controller, $annotations, $actions);
         });
 
@@ -160,7 +161,7 @@ class Blueprint
             }
 
             if (($annotations = $resource->getAnnotations()) instanceof Collection) {
-                foreach($annotations as $annotation) {
+                foreach ($annotations as $annotation) {
                     if ($annotation instanceof NamedType) {
                         if (empty($annotation->name)) {
                             throw new \RuntimeException('NamedType has no name');
@@ -220,14 +221,16 @@ class Blueprint
             $contents .= $this->line(2);
         });
 
-        return stripslashes(trim($typeDefinitions) . "\n\n" . trim($contents));
+        return stripslashes(trim($typeDefinitions)."\n\n".trim($contents));
     }
 
     /**
      * @param Attribute $attribute
+     *
      * @return string
      */
-    protected function resolveAttributeType(Attribute $attribute) {
+    protected function resolveAttributeType(Attribute $attribute)
+    {
         if ($attribute->type) {
             return $attribute->type;
         }
@@ -243,17 +246,19 @@ class Blueprint
         if (is_array($attribute->sample)) {
             return isset($attribute->sample[0])
                 ? static::T_ARRAY
-                : static::T_OBJECT
-                ;
+                : static::T_OBJECT;
         }
 
         return static::T_STRING;
     }
+
     /**
      * @param Parameter $parameter
+     *
      * @return string
      */
-    protected function resolveParameterType(Parameter $parameter) {
+    protected function resolveParameterType(Parameter $parameter)
+    {
         if ($parameter->type) {
             return $parameter->type;
         }
@@ -269,8 +274,7 @@ class Blueprint
         if (is_array($parameter->example)) {
             return isset($parameter->example[0])
                 ? static::T_ARRAY
-                : static::T_OBJECT
-                ;
+                : static::T_OBJECT;
         }
 
         return static::T_STRING;
@@ -297,8 +301,7 @@ class Blueprint
             if ($attribute->sample) {
                 $contents .= sprintf(': %s', is_array($attribute->sample)
                     ? json_encode($attribute->sample)
-                    : $attribute->sample)
-                ;
+                    : $attribute->sample);
             }
 
             $contents .= sprintf(
@@ -309,6 +312,7 @@ class Blueprint
             );
         });
     }
+
     /**
      * Append the types subsection to a resource or action.
      *
@@ -320,9 +324,9 @@ class Blueprint
     protected function appendTypes(&$contents, Collection $types)
     {
         $types->each(
-        /**
-         * @param NamedType $type
-         */
+            /**
+             * @param NamedType $type
+             */
             function ($type) use (&$contents) {
                 $contents .= $this->line();
                 $contents .= $this->tab(0);
@@ -333,7 +337,7 @@ class Blueprint
                     $type->description ?? ''
                 );
 
-                if ($type->properties !== NULL) {
+                if ($type->properties !== null) {
                     $contents .= sprintf(
                         "# Properties\n",
                         $type->name,
@@ -370,8 +374,7 @@ class Blueprint
         $parameters->each(function ($parameter) use (&$contents) {
             $example = $parameter->example && is_array($parameter->example)
                 ? json_encode($parameter->example)
-                : $parameter->example
-            ;
+                : $parameter->example;
 
             $type = $this->resolveParameterType($parameter);
             $contents .= $this->line();
@@ -403,7 +406,7 @@ class Blueprint
      *
      * @param string                               $contents
      * @param \Dingo\Blueprint\Annotation\Response $response
-     * @param \Dingo\Blueprint\RestResource            $resource
+     * @param \Dingo\Blueprint\RestResource        $resource
      *
      * @return void
      */
@@ -433,7 +436,7 @@ class Blueprint
      *
      * @param string                              $contents
      * @param \Dingo\Blueprint\Annotation\Request $request
-     * @param \Dingo\Blueprint\RestResource           $resource
+     * @param \Dingo\Blueprint\RestResource       $resource
      *
      * @return void
      */
@@ -511,10 +514,10 @@ class Blueprint
      *
      * @param string $contents
      * @param string $name
-     * @param int $indent
-     * @param int $lines
-     *
+     * @param int    $indent
+     * @param int    $lines
      * @param string $prefix
+     *
      * @return void
      */
     protected function appendSection(&$contents, $name, $indent = 0, $lines = 2, $prefix = '+ ')
@@ -530,8 +533,9 @@ class Blueprint
      * @param string $body
      * @param string $contentType
      *
-     * @return string
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     *
+     * @return string
      */
     protected function prepareBody($body, $contentType)
     {
@@ -596,12 +600,13 @@ class Blueprint
      * Get the overview file content to append.
      *
      * @param null $file
+     *
      * @return null|string
      */
     protected function getOverview($file = null)
     {
         if (null !== $file) {
-            if (!file_exists($file)) {
+            if (! file_exists($file)) {
                 throw new RuntimeException('Overview file could not be found.');
             }
 
@@ -614,6 +619,6 @@ class Blueprint
             return $content.$this->line(2);
         }
 
-        return null;
+        return;
     }
 }

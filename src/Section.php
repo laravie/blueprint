@@ -57,6 +57,7 @@ abstract class Section
 
         return $attributes;
     }
+
     /**
      * Get a sections attribute annotations.
      *

@@ -507,7 +507,5 @@ Overview content here.
 EOT;
 
         $this->assertEquals(trim($expected), $blueprint->generate($resources, 'testing', 'v1', null, __DIR__.'/Files/overview.apib'));
-
-
     }
 }
