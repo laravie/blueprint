@@ -10,9 +10,9 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
-        "illuminate/support": "^5.5",
-        "illuminate/filesystem": "^5.5",
+        "php": ">=7.1",
+        "illuminate/support": "^5.7",
+        "illuminate/filesystem": "^5.7",
         "doctrine/annotations": "^1.2",
         "phpdocumentor/reflection-docblock": "^3.1 || ^4.1"
     },
