@@ -2,10 +2,10 @@
 
 namespace Dingo\Blueprint;
 
-use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
 use ReflectionMethod;
 use RuntimeException;
+use Illuminate\Support\Str;
+use Illuminate\Support\Collection;
 
 class Action extends Section
 {
