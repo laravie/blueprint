@@ -590,7 +590,7 @@ class Blueprint
     }
 
     /**
-     * Get the parameters string
+     * Get the parameters string.
      *
      * @return string
      */
@@ -606,7 +606,7 @@ class Blueprint
     }
 
     /**
-     * Get formatted string with parameters with example
+     * Get formatted string with parameters with example.
      *
      * @return string
      */
@@ -623,7 +623,7 @@ class Blueprint
     }
 
     /**
-     * Get formatted string with parameters without example
+     * Get formatted string with parameters without example.
      *
      * @return string
      */
