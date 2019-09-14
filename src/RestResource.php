@@ -2,8 +2,8 @@
 
 namespace Dingo\Blueprint;
 
-use Illuminate\Support\Collection;
 use ReflectionClass;
+use Illuminate\Support\Collection;
 
 class RestResource extends Section
 {

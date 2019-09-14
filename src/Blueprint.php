@@ -2,14 +2,14 @@
 
 namespace Dingo\Blueprint;
 
-use Dingo\Blueprint\Annotation\Attribute;
-use Dingo\Blueprint\Annotation\NamedType;
-use Dingo\Blueprint\Annotation\Parameter;
 use ReflectionClass;
 use RuntimeException;
 use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Filesystem\Filesystem;
+use Dingo\Blueprint\Annotation\Attribute;
+use Dingo\Blueprint\Annotation\NamedType;
+use Dingo\Blueprint\Annotation\Parameter;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\Common\Annotations\SimpleAnnotationReader;
 
@@ -590,7 +590,7 @@ class Blueprint
     }
 
     /**
-     * Get the parameters string
+     * Get the parameters string.
      *
      * @return string
      */
@@ -606,7 +606,7 @@ class Blueprint
     }
 
     /**
-     * Get formatted string with parameters with example
+     * Get formatted string with parameters with example.
      *
      * @return string
      */
@@ -623,7 +623,7 @@ class Blueprint
     }
 
     /**
-     * Get formatted string with parameters without example
+     * Get formatted string with parameters without example.
      *
      * @return string
      */
@@ -643,7 +643,7 @@ class Blueprint
      *
      * @param null $file
      *
-     * @return null|string
+     * @return string|null
      */
     protected function getOverview($file = null)
     {
