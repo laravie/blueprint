@@ -1,15 +1,11 @@
 <?php
 
-namespace {
-    $arrayFirstVersion = '5.2';
-}
-
 namespace Dingo\Blueprint {
 
-    use PHPUnit\Framework\TestCase;
+    use Doctrine\Common\Annotations\SimpleAnnotationReader;
     use Illuminate\Support\Collection;
     use Illuminate\Filesystem\Filesystem;
-    use Doctrine\Common\Annotations\SimpleAnnotationReader;
+    use PHPUnit\Framework\TestCase;
 
     function array_first($array, callable $callback = null, $default = null)
     {
@@ -60,9 +56,6 @@ EOT;
 
         public function testGetAnnotationByTypeInLaravel52x()
         {
-            global $arrayFirstVersion;
-            $arrayFirstVersion = '5.2';
-
             $resources = new Collection([new Tests\Stubs\ActivityController]);
 
             $blueprint = new Blueprint(new SimpleAnnotationReader, new Filesystem);
@@ -72,9 +65,6 @@ EOT;
 
         public function testGetAnnotationByTypeInLaravel53x()
         {
-            global $arrayFirstVersion;
-            $arrayFirstVersion = '5.3';
-
             $resources = new Collection([new Tests\Stubs\ActivityController]);
 
             $blueprint = new Blueprint(new SimpleAnnotationReader, new Filesystem);
