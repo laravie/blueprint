@@ -2,10 +2,10 @@
 
 namespace Dingo\Blueprint;
 
-use Doctrine\Common\Annotations\SimpleAnnotationReader;
+use PHPUnit\Framework\TestCase;
 use Illuminate\Support\Collection;
 use Illuminate\Filesystem\Filesystem;
-use PHPUnit\Framework\TestCase;
+use Doctrine\Common\Annotations\SimpleAnnotationReader;
 
 class LaravelIntegrationTest extends TestCase
 {
