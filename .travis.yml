@@ -2,25 +2,23 @@ dist: bionic
 language: php
 
 php:
-  - 7.2
   - 7.3
+  - 7.4
+  - 8.0
 
 env:
   global:
     - setup=basic
   matrix:
-    - laravel=^5.7
-    - laravel=^5.8
     - laravel=^6.0
     - laravel=^7.0
-    - setup=stable laravel=^5.7
-    - setup=stable laravel=^5.8
+    - laravel=^8.0
     - setup=stable laravel=^6.0
     - setup=stable laravel=^7.0
-    - setup=lowest laravel=^5.7
-    - setup=lowest laravel=^5.8
+    - setup=stable laravel=^8.0
     - setup=lowest laravel=^6.0
     - setup=lowest laravel=^7.0
+    - setup=lowest laravel=^8.0
 
 install:
   - composer require "laravel/framework=${laravel}" --prefer-dist --no-interaction --no-suggest
@@ -33,32 +31,40 @@ script:
 
 matrix:
   include:
-    - php: 7.1
-      env: setup=basic laravel=^5.7
-    - php: 7.1
-      env: setup=basic laravel=^5.8
-    - php: 7.1
-      env: setup=stable laravel=^5.7
-    - php: 7.1
-      env: setup=stable laravel=^5.8
-    - php: 7.1
-      env: setup=lowest laravel=^5.7
-    - php: 7.1
-      env: setup=lowest laravel=^5.8
-    - php: 7.4
-      env: setup=basic laravel=^5.8
-    - php: 7.4
+    - php: 7.3
       env: setup=basic laravel=^6.0
-    - php: 7.4
+    - php: 7.3
       env: setup=basic laravel=^7.0
-    - php: 7.4
-      env: setup=stable laravel=^5.8
-    - php: 7.4
+    - php: 7.3
+      env: setup=basic laravel=^8.0
+    - php: 7.3
       env: setup=stable laravel=^6.0
-    - php: 7.4
+    - php: 7.3
       env: setup=stable laravel=^7.0
-    - php: 7.4
+    - php: 7.3
+      env: setup=stable laravel=^8.0
+    - php: 7.3
       env: setup=lowest laravel=^6.0
-    - php: 7.4
+    - php: 7.3
       env: setup=lowest laravel=^7.0
+    - php: 7.3
+      env: setup=lowest laravel=^8.0
+    - php: 8.0
+      env: setup=basic laravel=^6.0
+    - php: 8.0
+      env: setup=basic laravel=^7.0
+    - php: 8.0
+      env: setup=basic laravel=^8.0
+    - php: 8.0
+      env: setup=stable laravel=^6.0
+    - php: 8.0
+      env: setup=stable laravel=^7.0
+    - php: 8.0
+      env: setup=stable laravel=^8.0
+    - php: 8.0
+      env: setup=lowest laravel=^6.0
+    - php: 8.0
+      env: setup=lowest laravel=^7.0
+    - php: 8.0
+      env: setup=lowest laravel=^8.0
   fast_finish: true
