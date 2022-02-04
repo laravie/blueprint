@@ -10,15 +10,15 @@
         }
     ],
     "require": {
-        "php": ">=7.1",
-        "illuminate/support": "^5.7 || ^6.0 || ^7.0",
-        "illuminate/filesystem": "^5.7 || ^6.0 || ^7.0",
-        "doctrine/annotations": "^1.8",
+        "php": "^7.3 || ^8.0",
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0",
+        "illuminate/filesystem": "^6.0 || ^7.0 || ^8.0",
+        "doctrine/annotations": "^1.13.2",
         "phpdocumentor/reflection-docblock": "^3.1 || ^4.1 || ^5.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.15",
-        "phpunit/phpunit": "^7.5 || ^8.4"
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpunit/phpunit": "^9.5.13"
     },
     "autoload": {
         "psr-4": {
